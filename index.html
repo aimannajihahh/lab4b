@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <title>Display Books</title>
-
 </head>
-
 <body>
-
     <h1>Check Console for Book Details</h1>
 
-
-
     <script>
-
        const bookData = {
-
             "Books": [
-
                 {
 
                     "title": "The Great Gatsby",
@@ -31,11 +20,8 @@
                     "publicationYear": 1925,
 
                     "genres": ["Fiction", "Classics"]
-
                 },
-
                 {
-
                     "title": "To Kill a Mockingbird",
 
                     "author": "Harper Lee",
@@ -43,39 +29,22 @@
                     "publicationYear": 1960,
 
                     "genres": ["Fiction", "Coming-of-Age"]
-
                 }
-
             ]
-
         };
-
-
-
+        
         //title of the first book
-
         console.log("First Book Title:", bookData.Books[0].title);
 
-
-
         //author of the second book
-
         console.log("Second Book Author:", bookData.Books[1].author);
 
-
-
         //genres of all books
-
         console.log("All Genres:");
-
         bookData.Books.forEach(book => {
-
             console.log(book.title + " Genres:", book.genres.join(", "));
-
         });
-
     </script>
-
 </body>
 
 </html>
