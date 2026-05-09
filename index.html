@@ -3,38 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Display Books</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <h1>Check Console for Book Details</h1>
 
     <script>
-       const bookData = {
-            "Books": [
-                {
-                    "title": "The Great Gatsby",
-                    "author": "F. Scott Fitzgerald",
-                    "publicationYear": 1925,
-                    "genres": ["Fiction", "Classics"]
-                },
-                {
-                    "title": "To Kill a Mockingbird",
-                    "author": "Harper Lee",
-                    "publicationYear": 1960,
-                    "genres": ["Fiction", "Coming-of-Age"]
-                }
-            ]
-        };
+        $(document).ready(function(){
 
-        // 1. Title of the first book
-        console.log("First Book Title:", bookData.Books[0].title);
+            //menarik data daripada fail(books.json)
+            $.getJSON("books.json", function(data){
+                
+                //title of the first book
+                console.log("First Book Title: " + data[0].title);
 
-        // 2. Author of the second book
-        console.log("Second Book Author:", bookData.Books[1].author);
+                //author of the second book 
+                console.log("Second Book Author: " + data[1].author);
 
-        // 3. Genres of all books
-        console.log("All Genres:");
-        bookData.Books.forEach(book => {
-            console.log(book.title + " Genres:", book.genres.join(", "));
+                //genres of all books menggunakan jQuery $.each 
+                console.log("All Genres:");
+                $.each(data, function(index, book){
+                    console.log(book.title + " Genres: " + book.genres);
+                });
+            });
         });
     </script>
 </body>
